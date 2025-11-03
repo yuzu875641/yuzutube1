@@ -33,7 +33,7 @@ SHORT_STREAM_API_BASE_URL = "https://yt-dl-kappa.vercel.app/short/"
 
 invidious_api_data = {
     'video': [
-        'https://invidious.f5.si/',
+        'https://invidious.lunivers.trade/',
         'https://yt.omada.cafe/',
         'https://inv.perditum.com/',
         'https://inv.perditum.com/',
@@ -45,6 +45,7 @@ invidious_api_data = {
         'https://lekker.gay/',
     ], 
     'playlist': [
+        'https://invidious.lunivers.trade/',
         'https://invidious.ducks.party/',
         'https://super8.absturztau.be/',
         'https://invidious.nikkosphere.com/',
@@ -54,6 +55,7 @@ invidious_api_data = {
         'https://iv.duti.dev/',
     ], 
     'search': [
+        'https://invidious.lunivers.trade/',
         'https://inv.vern.cc/',
         'https://yt.thechangebook.org/',
         'https://invidious.vern.cc/',
@@ -68,6 +70,7 @@ invidious_api_data = {
         'https://iv.duti.dev/',
     ], 
     'channel': [
+        'https://invidious.lunivers.trade/',
         'https://invid-api.poketube.fun/',
         'https://invidious.ducks.party/',
         'https://super8.absturztau.be/',
@@ -78,6 +81,7 @@ invidious_api_data = {
         'https://iv.duti.dev/',
     ], 
     'comments': [
+        'https://invidious.lunivers.trade/',
         'https://invidious.ducks.party/',
         'https://super8.absturztau.be/',
         'https://invidious.nikkosphere.com/',
