@@ -91,7 +91,7 @@
                 </a>
                 <div>
                     <a href="/channel/{{ author_id }}" style="color: var(--yt-text); font-weight: bold;">{{ author }}</a>
-                    <p style="font-size: 12px; color: var(--yt-sub-text);">チャンネル登録者数: {{ subscribers_count }}</p>
+                    <p style="font-size: 12px; color: var(--yt-sub-text);">{{ subscribers_count }}</p>
                 </div>
             </div>
             {# 修正: ビュー数、公開日、いいね数を表示 #}
@@ -148,7 +148,7 @@
     const highQualityBtn = document.getElementById('high-quality-btn');
     const youtubeBtn = document.getElementById('youtube-btn');
     const eduBtn = document.getElementById('edu-btn');
-    const downloadBtn = document.getElementById('download-btn'); // 新規
+    const downloadBtn = document.getElementById('download-btn');
     
     const yuzuPlayer = document.getElementById('yuzutube-player');
     const highQualityPlayer = document.getElementById('high-quality-player');
