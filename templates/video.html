@@ -94,8 +94,10 @@
                     <p style="font-size: 12px; color: var(--yt-sub-text);">チャンネル登録者数: {{ subscribers_count }}</p>
                 </div>
             </div>
+            {# 修正: ビュー数、公開日、いいね数を表示 #}
             <div class="counts" style="color: var(--yt-sub-text); font-size: 14px;">
                 <span>{{ view_count }} 回視聴</span>
+                <span style="margin-left: 10px;">{{ length_text }}</span> 
                 <span style="margin-left: 10px;">👍 {{ like_count }}</span>
             </div>
         </div>
@@ -114,14 +116,22 @@
 
     <div class="recommended-videos">
         <h2 style="font-size: 18px; margin-top: 0;">おすすめ</h2>
+        {# 修正: サムネイルURLの直参照と、動画/プレイリストのタイプ別リンクに対応 #}
         {% for video in recommended_videos %}
+        {% set link_url = "/watch?v=" + video.video_id if video.type == 'video' else "/playlist?list=" + video.id %}
         <div class="recommended-card">
-            <a href="/watch?v={{ video.video_id }}">
-                <img src="/thumbnail?v={{ video.video_id }}" style="object-fit: cover;">
+            <a href="{{ link_url }}">
+                <img src="{{ video.thumbnail_url }}" style="object-fit: cover;">
                 <div class="recommended-meta">
                     <p style="color: var(--yt-text);">{{ video.title }}</p>
                     <p style="color: var(--yt-sub-text);">{{ video.author }}</p>
-                    <p style="color: var(--yt-sub-text);">{{ video.view_count_text }}</p>
+                    <p style="font-size: 12px; color: var(--yt-sub-text);">
+                        {% if video.type == 'video' %}
+                            {{ video.view_count_text }}{% if video.view_count_text and video.published_text %} • {% endif %}{{ video.published_text }}
+                        {% else %}
+                            ミックスリスト
+                        {% endif %}
+                    </p>
                 </div>
             </a>
         </div>
